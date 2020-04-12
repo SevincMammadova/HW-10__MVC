@@ -2,6 +2,9 @@ const root = document.querySelector('div#root');
 
 const block1 = document.createElement('div');
 
+const form1 = document.createElement('div');
+form1.setAttribute('class','inputform')
+
 const form = document.createElement('form');
 
 const fName = document.createElement('label');
@@ -28,7 +31,7 @@ age.innerHTML = 'Age';
 
 const ageInput = document.createElement('input');
 ageInput.setAttribute('id','age');
-ageInput.setAttribute('type','data');
+ageInput.setAttribute('type','number');
 
 
 form.appendChild(fName);
@@ -38,5 +41,8 @@ form.appendChild(sName);
 form.appendChild(sNameInput);
 form.appendChild(age);
 form.appendChild(ageInput);
-block1.appendChild(form); 
+form1.appendChild(form);
+block1.appendChild(form1); 
 root.appendChild(block1);
+
+

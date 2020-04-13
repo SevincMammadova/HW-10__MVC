@@ -36,10 +36,17 @@ function js() {
     .pipe(dest('build/js', { sourcemaps: true }))
 }
 
+function images() {
+    return src('src/images/**')
+    .pipe(dest('build/images'))
+}
+
+
+exports.images = images;
 exports.viewJs = viewJs;
 exports.js = js;
 exports.modelJs = modelJs;
 exports.controllerJs = controllerJs;
 exports.css = css;
 exports.html = html;
-exports.default = parallel(css,html,viewJs,modelJs,controllerJs,js);
+exports.default = parallel(css,html,viewJs,modelJs,controllerJs,js,images);

@@ -46,16 +46,19 @@ form__ageInput.setAttribute('class','form__ageInput');
 form__ageInput.setAttribute('type', 'number');
 form__ageInput.setAttribute('id','age');
 
-const form__submit = document.createElement('input');
+const form__submit = document.createElement('div');
 form__submit.setAttribute('class','form__submit');
-form__submit.setAttribute('type', 'submit');
+form__submit.setAttribute('onclick', 'submitData()')
+form__submit.setAttribute('type', 'button');
+form__submit.textContent = "submit";
 
 const container__list = document.createElement('div');
 container__list.setAttribute('class','container__list');
 
-const list__inner = document.createElement('textarea');
+const list__inner = document.createElement('div');
 list__inner.setAttribute('class', 'list__inner');
 list__inner.setAttribute('id', 'list')
+list__inner.setAttribute('onclick', 'submit()');
 
 const container__block2 = document.createElement('div');
 container__block2.setAttribute('class','container__block2');
@@ -141,20 +144,15 @@ root.appendChild(container);
 
 //functions
 
-let pList = [];
-
 function submitData() {
     const firstName = document.getElementById('firstName').value;
     const surName = document.getElementById('surName').value;
     const age = document.getElementById('age').value;
 
-    pList[0] = firstName;
-    pList[1] = surName;
-    pList[2] = age;
-    
-    console.log(pList);
-    kjlkj
-    
+    let data = firstName + ' ' + surName + ' ' + age + '<br>';
+    let oldValue = document.getElementById('list').innerHTML;
+    let newValue = data + oldValue;
+    document.getElementById('list').innerHTML = newValue; 
 }
 
 

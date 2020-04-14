@@ -1,162 +1,241 @@
-
 const root = document.querySelector('div#root');
+
+// add the div-container
 
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
 
+// add the container__block1
+
 const container__block1 = document.createElement('div');
 container__block1.setAttribute('class','container__block1');
+container.append(container__block1);
 
-const container__title = document.createElement('div');
-container__title.setAttribute('class', 'container__title');
-container__title.setAttribute('id','title');
+// add the block1__title
 
-const title__inner = document.createElement('h1');
-title__inner.setAttribute('class', 'title__inner');
-title__inner.innerHTML = 'Подключайся к нам!';
+const block1__title = document.createElement('div');
+block1__title.setAttribute('class', 'block1__title');
+block1__title.innerHTML = 'Join us!';
+container__block1.append(block1__title);
 
-const container__form = document.createElement('form');
-container__form.setAttribute('class', 'container__form');
-container__form.setAttribute('id', 'form');
+// add the block1__inner
 
-const form__fName = document.createElement('label');
-form__fName.setAttribute('for','firstName');
-form__fName.innerHTML = 'First Name:';
+const block1__inner = document.createElement('div');
+block1__inner.setAttribute('class', 'block1__inner');
+container__block1.append(block1__inner);
 
-const form__fNameInput = document.createElement('input');
-form__fNameInput.setAttribute('class','form__fNameInput');
-form__fNameInput.setAttribute('type', 'text');
-form__fNameInput.setAttribute('id','firstName');
+// add the inner__form
 
-const form__sName = document.createElement('label');
-form__sName.setAttribute('for','surName');
-form__sName.innerHTML = 'Surname:';
+const inner__form = document.createElement('div');
+inner__form.setAttribute('class', 'inner__form');
+block1__inner.append(inner__form);
 
-const form__sNameInput = document.createElement('input');
-form__sNameInput.setAttribute('class','form__sNameInput');
-form__sNameInput.setAttribute('type', 'text');
-form__sNameInput.setAttribute('id','surName');
+// add the form__dataForm
 
-const form__age = document.createElement('label');
-form__age.setAttribute('for','age');
-form__age.innerHTML = 'Age:';
+const form__dataForm = document.createElement('form');
+form__dataForm.setAttribute('class', 'form__dataForm');
+inner__form.append(form__dataForm);
 
-const form__ageInput = document.createElement('input');
-form__ageInput.setAttribute('class','form__ageInput');
-form__ageInput.setAttribute('type', 'number');
-form__ageInput.setAttribute('id','age');
+// add the dataForm__firstName
 
-const form__submit = document.createElement('div');
-form__submit.setAttribute('class','form__submit');
-form__submit.setAttribute('onclick', 'submitData()')
-form__submit.setAttribute('type', 'button');
-form__submit.textContent = "submit";
+const dataForm__firstName = document.createElement('label');
+dataForm__firstName.setAttribute('class', 'dataForm__firstName');
+dataForm__firstName.setAttribute('for', 'firsName');
+dataForm__firstName.innerHTML = 'FirstName *';
+form__dataForm.append(dataForm__firstName);
 
-const container__list = document.createElement('div');
-container__list.setAttribute('class','container__list');
+// add the dataForm__fNameInput
 
-const list__inner = document.createElement('div');
-list__inner.setAttribute('class', 'list__inner');
-list__inner.setAttribute('id', 'list')
-list__inner.setAttribute('onclick', 'submit()');
+const dataForm__fNameInput = document.createElement('input');
+dataForm__fNameInput.setAttribute('class', 'dataForm__fNameInput');
+dataForm__fNameInput.setAttribute('id', 'firstName');
+dataForm__fNameInput.setAttribute('type', 'text');
+form__dataForm.append(dataForm__fNameInput);
+
+// add the dataForm__surName
+
+const dataForm__surName = document.createElement('label');
+dataForm__surName.setAttribute('class', 'dataForm__surName');
+dataForm__surName.setAttribute('for', 'surName');
+dataForm__surName.innerHTML = 'SurName *';
+form__dataForm.append(dataForm__surName);
+
+// add the dataForm__surNameInput
+
+const dataForm__surNameInput = document.createElement('input');
+dataForm__surNameInput.setAttribute('class', 'dataForm__surNameInput');
+dataForm__surNameInput.setAttribute('id', 'surName');
+dataForm__surNameInput.setAttribute('type', 'text');
+form__dataForm.append(dataForm__surNameInput);
+
+// add the dataForm__age
+
+const dataForm__age = document.createElement('label');
+dataForm__age.setAttribute('class', 'dataForm__age');
+dataForm__age.setAttribute('for', 'age');
+dataForm__age.innerHTML = 'Age *'
+form__dataForm.append(dataForm__age);
+
+// add the dataForm__ageInput
+
+const dataForm__ageInput = document.createElement('input');
+dataForm__ageInput.setAttribute('class', 'dataForm__ageInput');
+dataForm__ageInput.setAttribute('id', 'age');
+dataForm__ageInput.setAttribute('type', 'number');
+form__dataForm.append(dataForm__ageInput);
+
+// add the dataForm__btnSubmit
+
+const dataForm__btnSubmit = document.createElement('input');
+dataForm__btnSubmit.setAttribute('class', 'dataForm__btnSubmit');
+dataForm__btnSubmit.setAttribute('type', 'submit');
+dataForm__btnSubmit.setAttribute('onclick', 'addPerson()');
+dataForm__btnSubmit.value = 'Add';
+form__dataForm.append(dataForm__btnSubmit);
+
+// add the inner__list
+
+const inner__list = document.createElement('div');
+inner__list.setAttribute('class', 'inner__list');
+inner__list.setAttribute('id', 'list');
+block1__inner.append(inner__list);
+
+// add the container__block2
 
 const container__block2 = document.createElement('div');
-container__block2.setAttribute('class','container__block2');
+container__block2.setAttribute('class', 'container__block2');
+container.append(container__block2);
 
-const block2__find = document.createElement('div');
-block2__find.setAttribute('class', 'block2__find');
+// add the block2__title
 
-const find__inner = document.createElement('h2');
-find__inner.setAttribute('class', 'find__inner');
-find__inner.innerHTML = 'Find!';
+const block2__title = document.createElement('div');
+block2__title.setAttribute('class', 'block2__title');
+block2__title.innerHTML = 'Find a Person';
+container__block2.append(block2__title);
 
-const container__formFind = document.createElement('form');
-container__formFind.setAttribute('class', 'container__formFind');
-container__formFind.setAttribute('id','myForm');
+// add the block2__inner
 
-const formFind__fName = document.createElement('label');
-formFind__fName.setAttribute('for','firstNameFind');
-formFind__fName.innerHTML = 'First Name:';
+const block2__inner = document.createElement('div');
+block2__inner.setAttribute('class', 'block2__inner');
+container__block2.append(block2__inner);
 
-const formFind__fNameInput = document.createElement('input');
-formFind__fNameInput.setAttribute('class','formFind__fNameInput');
-formFind__fNameInput.setAttribute('type', 'text');
-formFind__fNameInput.setAttribute('id','firstNameFind');
+// add the inner__findForm
 
-const form__sNameFind = document.createElement('label');
-form__sNameFind.setAttribute('for','surNameFind');
-form__sNameFind.innerHTML = 'Surname:';
+const inner__findForm = document.createElement('div');
+inner__findForm.setAttribute('class', 'inner__findForm');
+block2__inner.append(inner__findForm);
 
-const form__sNameFindInput = document.createElement('input');
-form__sNameFindInput.setAttribute('class','form__sNameFindInput');
-form__sNameFindInput.setAttribute('type', 'text');
-form__sNameFindInput.setAttribute('id','surNameFind');
+// add the findForm__dataForm
 
-const form__ageFind = document.createElement('label');
-form__ageFind.setAttribute('for','ageFind');
-form__ageFind.innerHTML = 'Age:';
+const findForm__dataForm = document.createElement('form');
+findForm__dataForm.setAttribute('class', 'findForm__dataForm');
+inner__findForm.append(findForm__dataForm);
 
-const form__ageFindInput = document.createElement('input');
-form__ageFindInput.setAttribute('class','form__ageFindInput');
-form__ageFindInput.setAttribute('type', 'number');
-form__ageFindInput.setAttribute('id','ageFind');
+// add the dataForm__findFistName
 
-const form__findButton = document.createElement('input');
-form__findButton.setAttribute('class', 'form__findButton');
-form__findButton.setAttribute('type','button');
-form__findButton.value = 'Find!'; 
+const dataForm__findFirstName = document.createElement('label');
+dataForm__findFirstName.setAttribute('class', 'dataForm__findFirstName');
+dataForm__findFirstName.setAttribute('for', 'findFirstName');
+dataForm__findFirstName.innerHTML = 'FirstName *';
+findForm__dataForm.append(dataForm__findFirstName);
 
-const container__result = document.createElement('div');
-container__result.setAttribute('class', 'container__result');
+// add the dataForm__findFirstNameInput
 
-const result__view = document.createElement('textarea');
-result__view.setAttribute('class','result__view');
+const dataForm__findFirstNameInput = document.createElement('input');
+dataForm__findFirstNameInput.setAttribute('class', 'dataForm__findFirstNameInput');
+dataForm__findFirstNameInput.setAttribute('id', 'findFirstName');
+dataForm__findFirstNameInput.setAttribute('type', 'text');
+findForm__dataForm.append(dataForm__findFirstNameInput);
 
+// add the dataForm__findSurName
 
-container__title.appendChild(title__inner);
-container__form.appendChild(form__fName);
-container__form.appendChild(form__fNameInput);
-container__form.appendChild(form__sName);
-container__form.appendChild(form__sNameInput);
-container__form.appendChild(form__age);
-container__form.appendChild(form__ageInput);
-container__form.appendChild(form__submit);
-container.appendChild(container__title);
-container__list.appendChild(list__inner);
-container__block1.appendChild(container__form);
-container__block1.appendChild(container__list);
-container__block2.appendChild(block2__find);
-block2__find.appendChild(find__inner);
-container__formFind.appendChild(formFind__fName);
-container__formFind.appendChild(formFind__fNameInput);
-container__formFind.appendChild(form__sNameFind);
-container__formFind.appendChild(form__sNameFindInput);
-container__formFind.appendChild(form__ageFind);
-container__formFind.appendChild(form__ageFindInput);
-container__formFind.appendChild(form__findButton);
-container__block2.appendChild(container__formFind);
-container__result.appendChild(result__view);
-container__block2.appendChild(container__result);
-container.appendChild(container__block1);
-container.appendChild(container__block2);
+const dataForm__findSurName = document.createElement('label');
+dataForm__findSurName.setAttribute('class', 'dataForm__findSurName');
+dataForm__findSurName.setAttribute('for', 'findSurName');
+dataForm__findSurName.innerHTML = 'SurName *';
+findForm__dataForm.append(dataForm__findSurName);
+
+// add the dataForm__findSurNameInput
+
+const dataForm__findSurNameInput = document.createElement('input');
+dataForm__findSurNameInput.setAttribute('class', 'dataForm__findSurNameInput');
+dataForm__findSurNameInput.setAttribute('id', 'findSurName');
+dataForm__findSurNameInput.setAttribute('type', 'text');
+findForm__dataForm.append(dataForm__findSurNameInput);
+
+// add the dataForm__findAge
+
+const dataForm__findAge = document.createElement('label');
+dataForm__findAge.setAttribute('class', 'dataForm__findAge');
+dataForm__findAge.setAttribute('for', 'findAge');
+dataForm__findAge.innerHTML = 'Age *';
+findForm__dataForm.append(dataForm__findAge);
+
+// add the dataForm__findAgeInput
+
+const dataForm__findAgeInput = document.createElement('input');
+dataForm__findAgeInput.setAttribute('class', 'dataForm__findAgeInput');
+dataForm__findAgeInput.setAttribute('id', 'findAge');
+dataForm__findAgeInput.setAttribute('type', 'number');
+findForm__dataForm.append(dataForm__findAgeInput);
+
+// add the dataForm__btnFind
+
+const dataForm__btnFind = document.createElement('input');
+dataForm__btnFind.setAttribute('class', 'dataForm__btnFind');
+dataForm__btnFind.setAttribute('type', 'submit');
+dataForm__btnFind.value = 'Find';
+findForm__dataForm.append(dataForm__btnFind);
+
+// add the inner__result
+
+const inner__result = document.createElement('div');
+inner__result.setAttribute('class', 'inner__result');
+inner__result.setAttribute('id', 'result');
+block2__inner.append(inner__result);
+
 root.appendChild(container);
 
 
 //functions
 
-function submitData() {
+let myPerson = [];
+let findPers = [];
+
+function addPerson() {
     const firstName = document.getElementById('firstName').value;
     const surName = document.getElementById('surName').value;
     const age = document.getElementById('age').value;
 
-    let data = firstName + ' ' + surName + ' ' + age + '<br>';
+    let data = firstName + ' ' + surName + ',' +  age;
     let oldValue = document.getElementById('list').innerHTML;
     let newValue = data + oldValue;
-    document.getElementById('list').innerHTML = newValue; 
+    
+    myPerson.push(newValue);
+    
+    
+    document.getElementById('list').innerHTML = myPerson;
 }
 
+function findPerson() {
+    const fFirstName = document.getElementById('findFirstName');
+    const fSurName = document.getElementById('findSurName');
+    const fAge = document.getElementById('findAge');
 
 
-
+    let findData = fFirstName + ' ' + fSurName + ',' +  fAge;
+    let oldVal = document.getElementById('result').innerHTML;
+    let curValue = findData + oldVal;
+    
+    myPerson.push(curValue);
+    
+    for(let i = 0; i < myPerson.length; i++) {
+        for(let j = 0; j < findPers.length; j++) {
+            if(findPers[j] == myPerson[i]){
+                document.getElementById('result').innerHTML = myPerson;
+            }
+        }
+    }
+}
 
 

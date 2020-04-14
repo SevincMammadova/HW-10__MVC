@@ -1,134 +1,122 @@
-@title_fon:#e042f5;
-@dark_magenta: #db37d9;
+@border: #0a1058;
+@title: #6843c5;
+@form:#14836e;
 
-
-body {
-    background-image: url(../images/bg.jpg);
-}
 .container {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 30px;
+    border: 5px double @border;
+    background-image: url(../images/bg1.jpg);
 
-        & .container__title#title {
-            background-color: @title_fon;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            border: 5px solid darkmagenta;
-
-                & .title__inner {
-                    text-align: center;
-                    color: white;
-                    size: 30px; 
-                }
-        }
-}
-
-.container__block1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-    & .container__form {
+    .container__block1 {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        width: 200px;
-        height:200px;
-        padding: 10px;
-        margin-top: 20px;
-        border-radius: 5px;
-        border: solid @dark_magenta;
-        color: white;
-        font-size: 20px;
-    
-            & .form__submit {
-                width: 100px;
-                height: auto;
-                background-color:#8c208a;
-                color: white;
-                font-size: 20px;
-                padding: 10px;
-                margin: 10px;
-            }
-    }
-
-    & .container__list {
-        width: 400px;
-        height: 200px;
-        padding: 10px;
-        margin-top: 20px;
-        border-radius: 5px;
-        border: 5px solid @dark_magenta;
+        border: 5px solid @border;
+        padding: 30px;
         justify-content: space-around;
 
-        & .list__inner {
-            background-color: white;
-            width: 400px;
-            height: 200px;
-            overflow: hidden;
-            overflow: scroll;
-        }
-    }
-}
-
-.container__block2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    border: 5px double white;
-    margin: 50px;
-
-    & .block2__find {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-color: @title_fon;
-        width: auto;
-        height: 60px;
-        padding: 10px;
-        margin: 20px;
-        border: solid @dark_magenta;
-
-        & .find__inner {
+        .block1__title {
+            background-color: @title;
+            border: solid @border;
+            padding: 10px;
+            margin-bottom: 30px;
+            width: 40%;
+            height: 30px;
             font-size: 30px;
             color: white;
             text-align: center;
-            justify-content: center;
+        }
+
+        .block1__inner {
+            display: flex;
+            flex-direction: row;
+            border: solid @border;
+            justify-content: space-around;
+
+            .inner__form {
+                background-color: @form;
+                padding: 10px;
+                border: solid @border;
+                margin: 30px;
+
+                .form__dataForm{
+                    background-color: white;
+                    color: darkblue;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    width: 200px;
+                    height: 200px;
+                    border: solid @border;
+                    padding: 10px;
+                }
+            }
+
+            .inner__list {
+                background-color: white;
+                overflow: hidden;
+                overflow: scroll;
+                border: solid @border;
+                padding: 10px;
+                margin: 30px;
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+
+    .container__block2 {
+        display: flex;
+        flex-direction: column;
+        border: 5px solid @border;
+        padding: 30px;
+        justify-content: space-around;
+
+        .block2__title{
+            background-color: @title;
+            border: solid @border;
+            padding: 10px;
+            margin-bottom: 30px;
+            width: 40%;
+            height: 30px;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .block2__inner {
+            display: flex;
+            flex-direction: row;
+            border: solid @border;
+            justify-content: space-evenly;
+
+            .inner__findForm{
+                background-color: @form;
+                padding: 10px;
+                border: solid @border;
+                margin: 30px;
+
+                .findForm__dataForm{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    background-color: white;
+                    color: darkblue;
+                    width: 200px;
+                    height: 200px;
+                    border: solid @border;
+                    padding: 10px;
+                }
+            }
+
+            .inner__result {
+                background-color: white;
+                border: 10px solid grey;
+                padding: 10px;
+                margin: 30px;
+                width: 300px;
+                height: 200px;
+            }
         }
     }
 }
-
-.container__formFind {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 200px;
-    height:200px;
-    padding: 10px;
-    margin: 20px;
-    border-radius: 5px;
-    border: solid @dark_magenta;
-    color: white;
-    font-size: 20px;
-}
-
-.container__result {
-    display: flex;
-    padding: 10px;
-    border: 5px solid @dark_magenta;
-    width: 400px;
-
-    & .result__view {
-        width: 400px;
-        height: 200px;
-        outline: none;
-        resize: none;
-        justify-content: center;
-    }
-}
-
-

@@ -90,15 +90,20 @@ const dataForm__btnSubmit = document.createElement('input');
 dataForm__btnSubmit.setAttribute('class', 'dataForm__btnSubmit');
 dataForm__btnSubmit.setAttribute('type', 'submit');
 dataForm__btnSubmit.setAttribute('onclick', 'addPerson()');
-dataForm__btnSubmit.value = 'Add';
+// dataForm__btnSubmit.value = 'Add';
 form__dataForm.append(dataForm__btnSubmit);
 
 // add the inner__list
 
 const inner__list = document.createElement('div');
 inner__list.setAttribute('class', 'inner__list');
-inner__list.setAttribute('id', 'list');
+inner__list.setAttribute('id', 'list1');
 block1__inner.append(inner__list);
+
+// add the list__ul
+const list__ul = document.createElement('ul');
+list__ul.setAttribute('id', 'list');
+inner__list.appendChild(list__ul);
 
 // add the container__block2
 
@@ -185,6 +190,7 @@ const dataForm__btnFind = document.createElement('input');
 dataForm__btnFind.setAttribute('class', 'dataForm__btnFind');
 dataForm__btnFind.setAttribute('type', 'submit');
 dataForm__btnFind.value = 'Find';
+dataForm__btnFind.setAttribute('onclick', 'searchName()');
 findForm__dataForm.append(dataForm__btnFind);
 
 // add the inner__result
@@ -199,43 +205,69 @@ root.appendChild(container);
 
 //functions
 
-let myPerson = [];
-let findPers = [];
+var people = [];
 
 function addPerson() {
-    const firstName = document.getElementById('firstName').value;
-    const surName = document.getElementById('surName').value;
-    const age = document.getElementById('age').value;
+    var sName = document.getElementById('firstName').value;
+    var sSurname = document.getElementById('surName').value;
+    var sAge = document.getElementById('age').value;
+    if (!((sName === "") && (sSurname === "") && (sAge === ""))) {
+        var p = {
+            name: sName,
+            surname: sSurname,
+            age: sAge, 
+        };
+    people.push(p);
+    
+    for (i = 0; i < people.length; i++) {
+        let oldlist = document.getElementById('list');
+        console.log(oldlist);
+        
+    for (i = 0; i < people.length; i++) {
+        var newlist = oldlist.innerHTML;
+        var newlist = newlist + "<li>" + people[i].name + " " + people[i].surname  + " " +  people[i].age + "</li>";
+    };
+    oldlist.innerHTML = newlist;
+    };
+  };
+};
 
-    let data = firstName + ' ' + surName + ',' +  age;
-    let oldValue = document.getElementById('list').innerHTML;
-    let newValue = data + oldValue;
-    
-    myPerson.push(newValue);
-    
-    
-    document.getElementById('list').innerHTML = myPerson;
-}
 
-function findPerson() {
-    const fFirstName = document.getElementById('findFirstName');
-    const fSurName = document.getElementById('findSurName');
-    const fAge = document.getElementById('findAge');
-
-
-    let findData = fFirstName + ' ' + fSurName + ',' +  fAge;
-    let oldVal = document.getElementById('result').innerHTML;
-    let curValue = findData + oldVal;
+function searchName() {
+    var sNames = document.getElementById('findFirstName').value;
+    var sSurnames = document.getElementById('findSurName').value;
+    var sAges = document.getElementById('findAge').value;
     
-    myPerson.push(curValue);
+
+    var resmassiv = [];
+
+    for (var i = 0; i < people.length; i++) {
+        if ((people[i].name === sNames && sNames !== "") || (people[i].surname === sSurnames && sSurnames !== "") || (people[i].age === sAges && sAges !== "")) {
+            var newarray = {
+                name: people[i].name,
+                surname: people[i].surname,
+                age: people[i].age,
+            } 
+        resmassiv.push(newarray);
+        };
+    };
+
+        document.getElementById('result').innerHTML = "";
+        var resultObject = resmassiv;
+        searchList = resultObject.length;
+        for (y = 0; y < searchList; y++) {
     
-    for(let i = 0; i < myPerson.length; i++) {
-        for(let j = 0; j < findPers.length; j++) {
-            if(findPers[j] == myPerson[i]){
-                document.getElementById('result').innerHTML = myPerson;
-            }
-        }
-    }
-}
+            oldlistsearch = document.getElementById('result');
+            for (y = 0; y < searchList; y++) {
+                var newlistsearch = document.getElementById('result').innerHTML;
+                var newlistsearch = newlistsearch + "<li>" + resultObject[y].name + " " + resultObject[y].surname + " " + resultObject[y].age + "</li>";
+            oldlistsearch.innerHTML = newlistsearch;
+        };
+     };
+    };
+
+    
+    
+
 
 

@@ -1,0 +1,28 @@
+{
+  "name": "hw-10__mvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SevincMammadova/HW-10__MVC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SevincMammadova/HW-10__MVC/issues"
+  },
+  "homepage": "https://github.com/SevincMammadova/HW-10__MVC#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "2.2.0",
+    "gulp-concat": "2.6.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-less": "4.0.1",
+    "gulp-pug": "4.0.1"
+  }
+}

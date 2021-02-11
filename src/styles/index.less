@@ -1,0 +1,123 @@
+@border: #0a1058;
+@title: #6843c5;
+@form:#14836e;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 5px double @border;
+    background-image: url(../images/bg1.jpg);
+
+    .container__block1 {
+        display: flex;
+        flex-direction: column;
+        border: 5px solid @border;
+        padding: 30px;
+        justify-content: space-around;
+
+        .block1__title {
+            background-color: @title;
+            border: solid @border;
+            padding: 10px;
+            margin-bottom: 30px;
+            width: 40%;
+            height: 30px;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .block1__inner {
+            display: flex;
+            flex-direction: row;
+            border: solid @border;
+            justify-content: space-around;
+
+            .inner__form {
+                background-color: @form;
+                padding: 10px;
+                border: solid @border;
+                margin: 30px;
+
+                .form__dataForm{
+                    background-color: white;
+                    color: darkblue;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    width: 200px;
+                    height: 200px;
+                    border: solid @border;
+                    padding: 10px;
+                }
+            }
+
+            .inner__list {
+                background-color: white;
+                overflow: hidden;
+                overflow: scroll;
+                border: solid @border;
+                padding: 10px;
+                margin: 30px;
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+
+    .container__block2 {
+        display: flex;
+        flex-direction: column;
+        border: 5px solid @border;
+        padding: 30px;
+        border-top: 10px;
+        justify-content: space-around;
+
+        .block2__title{
+            background-color: @title;
+            border: solid @border;
+            padding: 10px;
+            margin-bottom: 30px;
+            width: 40%;
+            height: 30px;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .block2__inner {
+            display: flex;
+            flex-direction: row;
+            border: solid @border;
+            justify-content: space-evenly;
+
+            .inner__findForm{
+                background-color: @form;
+                padding: 10px;
+                border: solid @border;
+                margin: 30px;
+
+                .findForm__dataForm{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    background-color: white;
+                    color: darkblue;
+                    width: 200px;
+                    height: 200px;
+                    border: solid @border;
+                    padding: 10px;
+                }
+            }
+
+            .inner__result {
+                background-color: white;
+                border: 10px solid grey;
+                padding: 10px;
+                margin: 30px;
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+}
